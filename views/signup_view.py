@@ -9,7 +9,7 @@ class SignUpView:
         self.on_back = on_back
         self.setup_page()
         self.signup_page_ui()
-        self.page.add(create_app_bar("Sign Up", on_back))
+        self.page.add(create_app_bar("注册", on_back))
 
 
     def setup_page(self):
@@ -18,7 +18,7 @@ class SignUpView:
         self.page.window_height = 600
         self.page.window_resizable = True
         self.page.window_always_on_top = True
-        self.page.title = 'Signup'
+        self.page.title = '注册'
         self.page.vertical_alignment = ft.MainAxisAlignment.CENTER
         self.page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
 
@@ -26,7 +26,7 @@ class SignUpView:
         self.page.controls.clear() 
         
         lb_cadastro = ft.Text(
-        "Cadastro de usuário",
+        "用户注册",
         size=12,
         color=ft.colors.BLACK,
         weight=ft.FontWeight.BOLD,
@@ -36,28 +36,22 @@ class SignUpView:
             height=40,
             text_size=12,
             color=ft.colors.BLACK,
-            label="Nome",
-        )
-        tf_lastname = ft.TextField( 
-            height=40,
-            text_size=12,
-            label='Sobrenome',
-            color=ft.colors.BLACK,
+            label="用户名",
         )
         tf_email = ft.TextField(
             height=40,
             text_size=12,
-            label='E-mail',
+            label='邮箱',
             color=ft.colors.BLACK,
         )
         tf_telefone = ft.TextField(
-            label='Telefone',
+            label='手机号码',
             height=40,
             text_size=12,
             color=ft.colors.BLACK,
         )
         tf_password = ft.TextField(
-            label='Crie sua senha',
+            label='密码',
             height=40,
             text_size=12,
             color=ft.colors.BLACK,
@@ -65,7 +59,7 @@ class SignUpView:
             can_reveal_password=True
         )
         tf_confirmpassword = ft.TextField(
-            label='Digite sua senha novamente',
+            label='再次输入您的密码',
             height=40,
             text_size=12,
             color=ft.colors.BLACK,
@@ -74,8 +68,8 @@ class SignUpView:
         )
 
         bt_signup = ft.ElevatedButton(
-            "Sign Up",
-            on_click=lambda e: self.on_signup(tf_firstname.value, tf_lastname.value, tf_email.value,
+            "注册",
+            on_click=lambda e: self.on_signup(tf_firstname.value,  tf_email.value,
                                               tf_telefone.value, tf_password.value, tf_confirmpassword.value),
             width=120,
             height=40
@@ -85,7 +79,6 @@ class SignUpView:
         self.page.add(
                       lb_cadastro, 
                       tf_firstname, 
-                      tf_lastname, 
                       tf_email, 
                       tf_telefone, 
                       tf_password, 

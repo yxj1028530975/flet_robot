@@ -14,18 +14,12 @@ class SignUpController:
         
     def add_user(self, first_name, last_name, email, phone, password, confirm_password):
         user_data = {
-            'first_name': '',
-            'last_name': '',
-            'email': '',
-            'phone': '',
-            'password': '',
+            'first_name': first_name,
+            'last_name': last_name,
+            'email': email,
+            'phone': phone,
+            'password': password,
         }
-        user_data['first_name'] = first_name
-        user_data['last_name'] = last_name
-        user_data['email'] = email
-        user_data['phone'] = phone
-        user_data['password'] = password
-
         for val in user_data.values():
             if not val:
                 self.error("所有字段都必须填写")

@@ -9,8 +9,14 @@ class LoginController:
         self.view = LoginView(page, self.handle_login, self.go_to_signup, self.app.go_back)
 
     def handle_login(self, username, password):
-       if username == "" or password == "":
-        print("请输入账号或密码")
+        print(username, password)
+        if username == "" or password == "":
+            print("请输入账号或密码")
+        elif username == "admin" and password == "admin":
+            print("登录成功")
+            self.app.navigate("/main")
+        else:
+            print("登录失败")
        
     def go_to_signup(self):
         self.app.navigate("/signup")

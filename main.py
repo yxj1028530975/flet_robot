@@ -1,6 +1,7 @@
 import flet as ft
 from controllers.login_controller import LoginController
 from controllers.signup_controller import SignUpController
+from controllers.main_controller import MainController
 import sqlite3
 
 class App:
@@ -9,6 +10,7 @@ class App:
         self.route_to_controller = {
             "/": LoginController,
             "/signup": SignUpController,
+            "/main": MainController,
             # ... other routes ...
         }
         self.history = []  # Navigation history
